@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>WALL-E: A Terra Que Criamos</title>
 <style>
+/* Corpo da página */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -12,61 +13,67 @@ body {
     overflow-x: hidden;
 }
 
-
+/* Container da imagem de fundo */
 #image-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-
+/* Imagem de fundo */
 #background {
     width: 100%;
     display: block;
     transition: opacity 1s ease; 
 }
 
-
+/* Efeito fade-out */
 .fade-out {
     opacity: 0;
 }
 
-
+/* Botão azul neon */
 button {
     position: absolute;
     top: 80px;
     left: 20px;
     padding: 15px 30px;
     font-size: 18px;
-    background-color: #ffcc00;
+    background-color: #3399ff; /* azul neon */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     z-index: 2;
-    box-shadow: 0 0 20px #ffcc00;
+    box-shadow: 0 0 20px #3399ff; /* glow azul */
     animation: pulse 2s infinite;
 }
 
 button:hover {
-    background-color: #e6b800;
+    background-color: #66ccff;
     transform: scale(1.05);
 }
 
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #3399ff; }
+    50% { box-shadow: 0 0 25px #66ccff; }
+    100% { box-shadow: 0 0 10px #3399ff; }
+}
 
+/* Conteúdo principal */
 #conteudo {
     display: none;
     padding: 50px 20px;
-    max-width: 1000px; /* mais amplo para ficar "inteiro" */
+    max-width: 1000px; /* ocupa mais espaço */
     margin: 0 auto; /* centralizado */
     background-color: #111;
     color: #fff;
-    border-radius: 0; /* sem bordas arredondadas */
-    box-shadow: 0 0 40px rgba(0, 0, 255, 0.3); /* sombra azul */
+    border-radius: 0;
+    box-shadow: 0 0 40px rgba(0, 150, 255, 0.6); /* glow azul */
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
-
+/* Títulos H1 */
 #conteudo h1 {
     font-family: Times New Roman, sans-serif;
     color: #66ccff; /* azul claro */
@@ -74,6 +81,7 @@ button:hover {
     text-shadow: 0 0 5px #66ccff, 0 0 10px #3399ff, 0 0 20px #0033cc;
 }
 
+/* Títulos H2 */
 #conteudo h2 {
     font-family: Times New Roman, sans-serif;
     color: #3399ff; /* azul médio */
@@ -81,13 +89,15 @@ button:hover {
     margin-top: 40px;
 }
 
+/* Parágrafos */
 #conteudo p {
     font-family: "Arial", Times, serif;
     font-size: 18px;
     margin-bottom: 30px;
-    color: #fff; /* branco */
+    color: #fff;
 }
 
+/* Iframes */
 #conteudo iframe {
     width: 100%;
     height: 400px;
@@ -96,12 +106,14 @@ button:hover {
     margin-bottom: 30px;
 }
 
+/* Imagens */
 #conteudo img {
     max-width: 100%;
     margin: 20px 0;
     border-radius: 10px;
 }
 
+/* Links */
 #conteudo a {
     color: #66ccff;
     text-decoration: none;
@@ -111,6 +123,7 @@ button:hover {
     text-decoration: underline;
 }
 
+/* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
@@ -118,6 +131,30 @@ footer {
     font-size: 14px;
 }
 
+/* Logo no final da página */
+#logo-container {
+    display: none;
+    flex: align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#logo-container p {
+    color: #66ccff; /* texto azul */
+    font-size: 18px;
+    margin: 0;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px #3399ff; /* sombra azul */
+}
+
+/* Responsividade */
 @media screen and (max-width: 768px) {
     #conteudo {
         padding: 30px 10px;
@@ -131,18 +168,13 @@ footer {
     }
 }
 
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 10px #ffcc00; }
-    50% { box-shadow: 0 0 25px #ffcc00; }
-    100% { box-shadow: 0 0 10px #ffcc00; }
-}
-
+/* Animações */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 </style>
+
 
 </head>
 <body>
