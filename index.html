@@ -235,7 +235,8 @@ footer {
 <!-- Logo e nome - escondidos inicialmente -->
 <div id="logo-container" style="display: none; flex; align-items: center; justify-content: center; gap: 15px; margin-top: 20px;">
     <p style="color: #fff; font-size: 18px; margin: 0;"><b>Anna B. M. Baessa</b></p>
-    <img src="detetive.png" alt="Anna B. M. Baessa" id="logo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px #a8ff60;">
+   <img src="detetive.png" alt="..." id="logo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px #3399ff;">
+
 </div>
 
 
@@ -247,22 +248,18 @@ function mostrarConteudo() {
     const img = document.getElementById('background');
     const logo = document.getElementById('logo-container');
 
-    // Aplica o fade-out na imagem
+   
     img.classList.add('fade-out');
 
+   
     setTimeout(() => {
         container.style.display = 'none';
         conteudo.style.display = 'block';
         logo.style.display = 'flex'; 
-        
-        // 🌟 adiciona brilho azul no fundo do conteúdo quando aparecer
-        conteudo.style.boxShadow = "0 0 40px rgba(0, 150, 255, 0.6)";
-
         conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 1000);
 }
+
 </script>
-
-
 </body>
 </html>
