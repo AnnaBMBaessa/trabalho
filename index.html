@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>WALL-E: A Terra Que Criamos</title>
-<style>
-/* Corpo da página */      
+<style>  
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -12,84 +11,70 @@ body {
     color: #fff;
     overflow-x: hidden;
 }
-
-/* Container da imagem de fundo */
 #image-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-
-/* Imagem de fundo */
 #background {
     width: 100%;
     display: block;
     transition: opacity 1s ease; 
 }
-
-/* Efeito fade-out */
 .fade-out {
     opacity: 0;
 }
 
-/* Botão azul neon */
 button {
     position: absolute;
     top: 80px;
     left: 20px;
     padding: 15px 30px;
     font-size: 18px;
-    background-color: #3399ff; /* azul neon */
+    background-color: #3399ff; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
     z-index: 2;
-    box-shadow: 0 0 20px #3399ff; /* glow azul */
+    box-shadow: 0 0 20px #3399ff; 
     animation: pulse 2s infinite;
 }
-
 button:hover {
     background-color: #66ccff;
     transform: scale(1.05);
 }
-
 @keyframes pulse {
     0% { box-shadow: 0 0 10px #3399ff; }
     50% { box-shadow: 0 0 25px #66ccff; }
     100% { box-shadow: 0 0 10px #3399ff; }
 }
-
-/* Conteúdo principal */
 #conteudo {
     display: none;
     padding: 50px 20px;
-    max-width: 1000px; /* ocupa mais espaço */
-    margin: 0 auto; /* centralizado */
+    max-width: 1000px; 
+    margin: 0 auto;
     background-color: #111;
     color: #fff;
     border-radius: 0;
-    box-shadow: 0 0 40px rgba(0, 150, 255, 0.6); /* glow azul */
+    box-shadow: 0 0 40px rgba(0, 150, 255, 0.6); 
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
-/* Títulos H1 */
 #conteudo h1 {
     font-family: Times New Roman, sans-serif;
-    color: #66ccff; /* azul claro */
+    color: #66ccff; 
     text-align: center;
     text-shadow: 0 0 5px #66ccff, 0 0 10px #3399ff, 0 0 20px #0033cc;
 }
 
-/* Títulos H2 */
 #conteudo h2 {
     font-family: Times New Roman, sans-serif;
-    color: #3399ff; /* azul médio */
+    color: #3399ff; 
     text-shadow: 0 0 3px #3399ff, 0 0 8px #0066cc;
     margin-top: 40px;
 }
 
-/* Parágrafos */
 #conteudo p {
     font-family: "Arial", Times, serif;
     font-size: 18px;
@@ -97,7 +82,7 @@ button:hover {
     color: #fff;
 }
 
-/* Iframes */
+
 #conteudo iframe {
     width: 100%;
     height: 400px;
@@ -106,24 +91,20 @@ button:hover {
     margin-bottom: 30px;
 }
 
-/* Imagens */
 #conteudo img {
     max-width: 100%;
     margin: 20px 0;
     border-radius: 10px;
 }
 
-/* Links */
 #conteudo a {
     color: #66ccff;
     text-decoration: none;
 }
-
 #conteudo a:hover {
     text-decoration: underline;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
@@ -131,7 +112,7 @@ footer {
     font-size: 14px;
 }
 
-/* Logo no final da página */
+
 #logo-container {
     display: none;
     flex: align-items: center;
@@ -139,22 +120,19 @@ footer {
     gap: 15px;
     margin-top: 20px;
 }
-
 #logo-container p {
-    color: #66ccff; /* texto azul */
+    color: #66ccff; 
     font-size: 18px;
     margin: 0;
 }
-
 #logo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 15px #3399ff; /* sombra azul */
+    box-shadow: 0 0 15px #3399ff;
 }
 
-/* Responsividade */
 @media screen and (max-width: 768px) {
     #conteudo {
         padding: 30px 10px;
@@ -167,25 +145,18 @@ footer {
         height: 250px;
     }
 }
-
-/* Animações */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 </style>
-
-
 </head>
 <body>
-
 <div id="image-container">
     <img id="background" src="ATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
     <button onclick="mostrarConteudo()">Assista o trailer</button>
 </div>
-
 <div id="conteudo">
-
 <h1>WALL-E: A Terra Que Criamos.</h1>
 <p><b>Não é cinema — o legado que deixamos é real.</b></p>
 <hr>
@@ -210,7 +181,8 @@ footer {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Qx8JIoNOz0Y?si=yE59mfe0p-YOewqy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <h2>"Eu não me considero viciado em telas." Tem certeza?</h2>
-<p>O vício em telas vai muito além de passar horas grudados em redes sociais — ele está deixando um rastro de destruição tanto na nossa mente quanto no planeta. Psicólogos alertam que a exposição constante às telas altera nosso comportamento, aumenta níveis de ansiedade, reduz a capacidade de concentração e prejudica a percepção da realidade. Ao mesmo tempo, a fabricação e descarte desses dispositivos cobram um preço ambiental altíssimo: mineração intensa, emissão de poluentes, contaminação de solos e cursos d’água e impacto irreversível na vida selvagem. Cada nova tela que compramos ou jogamos fora contribui para esse ciclo de degradação, e nós mal percebemos o tamanho do problema. Estamos tão absorvidos por notificações, vídeos e jogos que esquecemos que cada ação tem consequências tangíveis: rios poluídos, florestas destruídas, espécies ameaçadas. É como se estivéssemos criando um mundo paralelo na tela enquanto o mundo real sofre — e, segundo os especialistas, quanto mais cedo percebemos isso, melhor podemos agir antes que o estrago se torne irreversível. Muitos nunca pensaram por esse lado, e muitos nem se atentam aos detalhes porque estão tão conectados que simplesmente ignoram o que acontece no lugar mais importante: o planeta Terra. E depois de tudo isso… você ainda não se considera viciado?</p>
+<p>Quando pensamos em poluição, imaginamos rios sujos ou fumaça de chaminés. Mas existe uma contaminação mais sutil e constante que ataca nossos sentidos diariamente: a poluição sonora e visual. Especialistas alertam que o excesso de ruídos — buzinas, sirenes, obras — e o caos de informações visuais — outdoors, fios emaranhados e excesso de publicidade — estão moldando nosso comportamento. Eles aumentam os níveis de estresse e ansiedade, diminuem nossa capacidade de concentração e nos desconectam do ambiente ao nosso redor.</p>
+<p>Nós nos tornamos tão imunes a essa cacofonia visual e auditiva que mal percebemos o preço que pagamos. A cidade "grita" o tempo todo, e essa sobrecarga sensorial não afeta apenas os humanos; ela desorienta a vida selvagem, interfere na comunicação dos pássaros e transforma nossos espaços públicos em zonas de exaustão mental. Cada outdoor luminoso, cada alarme disparado, contribui para um ambiente hostil que valoriza o excesso em detrimento da tranquilidade. Estamos tão imersos nesse caos que esquecemos como é um ambiente verdadeiramente calmo. E depois de tudo isso… você ainda se sente em paz no seu dia a dia?</p>
 <p><b>Observe o curto documentário do psicólogo Cristiano Nabuco a respeito dos vícios nas telas.</b></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0iwquDzZRN0?si=u87Q2dgzXz7UmWTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <hr>
