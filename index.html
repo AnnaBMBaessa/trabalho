@@ -7,113 +7,103 @@
 /* ==== ESTILO GERAL ==== */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(180deg, #0b0c0f, #1a1a1a, #0b0c0f);
-    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f2f6f3;
+    color: #333;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* ==== TELA INICIAL ==== */
+/* ==== CABEÇALHO COM IMAGEM ==== */
 #image-container {
     position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: url('ATerraQueCriamos.jpg') center/cover no-repeat;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
 }
 
-#background {
+.overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: opacity 1s ease; 
+    background: rgba(0,0,0,0.45);
+    top: 0;
+    left: 0;
 }
 
-.fade-out {
-    opacity: 0;
-}
-
-/* ==== BOTÃO ==== */
 button {
-    position: absolute;
-    bottom: 50px;
-    padding: 18px 40px;
-    font-size: 22px;
-    background: linear-gradient(90deg, #00ff88, #00ccff);
+    position: relative;
+    padding: 15px 35px;
+    font-size: 20px;
+    background: #3cb371;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    z-index: 2;
-    color: #111;
+    color: #fff;
     font-weight: bold;
     letter-spacing: 1px;
-    box-shadow: 0 0 30px #00ffcc;
-    animation: pulse 2s infinite;
-    transition: transform 0.3s ease;
+    z-index: 2;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 40px #00ffcc;
+    transform: scale(1.05);
+    background: #2e8b57;
 }
 
 /* ==== CONTEÚDO ==== */
 #conteudo {
     display: none;
-    padding: 50px;
-    max-width: 900px;
-    margin: 50px auto;
-    background-color: rgba(17, 17, 17, 0.95);
-    border-radius: 15px;
-    box-shadow: 0 0 50px rgba(0, 255, 150, 0.4);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-#conteudo.mostrar {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 40px auto;
 }
 
 #conteudo h1 {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-    color: #00ffcc;
+    font-family: 'Georgia', serif;
+    font-size: 38px;
+    color: #2e8b57;
     text-align: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffaa;
+    margin-bottom: 20px;
 }
 
 #conteudo h2 {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 28px;
-    color: #7fff7f;
-    text-shadow: 0 0 6px #00ff88, 0 0 15px #00ff44;
+    font-size: 26px;
+    color: #3a6ea5;
     margin-top: 40px;
 }
 
 #conteudo p {
     font-size: 18px;
-    line-height: 1.6;
     margin-bottom: 25px;
     text-align: justify;
+}
+
+/* ==== CARDS PARA SEÇÕES ==== */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* ==== VÍDEOS RESPONSIVOS ==== */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* proporção 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 12px;
     margin: 20px 0;
-    box-shadow: 0 0 25px rgba(0,255,200,0.4);
 }
-
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -126,57 +116,40 @@ button:hover {
 #conteudo img {
     max-width: 100%;
     margin: 25px 0;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,255,150,0.3);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
 }
 
-/* ==== LINKS ==== */
-#conteudo a {
-    color: #00ffcc;
-    text-decoration: none;
-    font-weight: bold;
-}
-#conteudo a:hover {
-    text-decoration: underline;
-}
-
-/* ==== FOOTER ==== */
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: #bbb;
-    font-size: 15px;
-    background: #111;
-    border-top: 1px solid #222;
-}
-
-/* ==== LOGO/ASSINATURA ==== */
+/* ==== LOGO ==== */
 #logo-container {
     display: none;
     flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 #logo-container p {
-    font-size: 20px;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    font-size: 18px;
+    color: #2e8b57;
+    font-weight: bold;
 }
 #logo {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 25px #00ffaa;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* ==== ANIMAÇÕES ==== */
-@keyframes pulse {
-    0% { box-shadow: 0 0 15px #00ffcc; }
-    50% { box-shadow: 0 0 40px #00ffaa; }
-    100% { box-shadow: 0 0 15px #00ffcc; }
+/* ==== FOOTER ==== */
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 15px;
+    background: #e9f2ec;
+    color: #444;
+    border-top: 1px solid #ccc;
 }
 </style>
 </head>
@@ -184,32 +157,32 @@ footer {
 
 <!-- === INTRO === -->
 <div id="image-container">
-    <img id="background" src="ATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
-    <button onclick="mostrarConteudo()">🌍 Assista o trailer</button>
+    <div class="overlay"></div>
+    <button onclick="mostrarConteudo()">🌍 Entrar no site</button>
 </div>
 
 <!-- === CONTEÚDO PRINCIPAL === -->
 <div id="conteudo">
     <h1>WALL-E: A Terra Que Criamos</h1>
-    <p><b>Não é cinema — o legado que deixamos é real.</b></p>
-    <hr>
 
-    <h2>Você já se perguntou um dia: "Até onde o planeta Terra vai chegar?"</h2>
-    <p>Não é filme, não é fantasia — é a vida real. (...) <br> Quer entender melhor? Veja o vídeo:</p>
-
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
+    <div class="card">
+        <h2>Você já se perguntou: "Até onde a Terra vai chegar?"</h2>
+        <p>Não é filme, não é fantasia — é a vida real. (...) Quer entender melhor? Veja o vídeo:</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
+        </div>
     </div>
 
-    <p>Hoje em dia, com todos os avanços tecnológicos, (...) resultado? Um meio ambiente em crise.</p>
+    <div class="card">
+        <h2>Poluição e Consumo</h2>
+        <p>Indústrias poluindo sem dó, lixo eletrônico descartado (...) resultado? Um meio ambiente em crise.</p>
+        <img src="https://img.freepik.com/vetores-premium/industria-fabril-poluindo-a-cena-da-agua_18591-64080.jpg" alt="Fábrica poluindo">
+    </div>
 
-    <img src="https://img.freepik.com/vetores-premium/industria-fabril-poluindo-a-cena-da-agua_18591-64080.jpg" alt="Fábrica poluindo">
-
-    <hr>
-    <h2>Mas o que tudo isso tem a ver com o filme WALL-E?</h2>
-    <p>O filme "WALL-E" conta a história de um robô (...) esperança depende da mudança de comportamento humano.</p>
-
-    <!-- ... aqui você mantém o resto do conteúdo que já escreveu, só adaptar para usar a class="video-container" nos vídeos ... -->
+    <div class="card">
+        <h2>O que isso tem a ver com WALL-E?</h2>
+        <p>O filme "WALL-E" conta a história de um robô que tenta limpar a Terra tomada pelo lixo. (...) É uma ficção com muito de realidade.</p>
+    </div>
 
     <div id="logo-container">
         <p><b>Anna B. M. Baessa</b></p>
@@ -218,24 +191,19 @@ footer {
 </div>
 
 <footer>
-    🌱 Desenvolvido como alerta para o futuro da Terra. Use tecnologia para preservar, não destruir.
+    🌱 Desenvolvido como alerta para o futuro da Terra. Cada ação conta.
 </footer>
 
 <script>
 function mostrarConteudo() {
     const conteudo = document.getElementById('conteudo');
     const container = document.getElementById('image-container');
-    const img = document.getElementById('background');
     const logo = document.getElementById('logo-container');
 
-    img.classList.add('fade-out');
-    setTimeout(() => {
-        container.style.display = 'none';
-        conteudo.style.display = 'block';
-        logo.style.display = 'flex'; 
-        requestAnimationFrame(() => conteudo.classList.add('mostrar'));
-        conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 1000);
+    container.style.display = 'none';
+    conteudo.style.display = 'block';
+    logo.style.display = 'flex'; 
+    conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
 
