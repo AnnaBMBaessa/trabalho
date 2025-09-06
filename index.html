@@ -2,7 +2,12 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Poluição do Meio Ambiente</title>
+<title>Poluição do Meio Ambiente - Infográfico Interativo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 /* ==== GERAL ==== */
 body {
@@ -10,71 +15,75 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #fdfdfd;
     color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #ddd;
 }
 
-/* ==== HEADER ==== */
+/* ==== HEADER COM VÍDEO ==== */
 header {
-    background: linear-gradient(90deg, #7fd17f, #4db8cc);
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-}
-header h1 {
-    font-size: 42px;
-    margin: 0;
-}
-header p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-/* ==== SEÇÕES EM BLOCO ==== */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-section h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-section p {
-    max-width: 800px;
-    margin: 0 auto 25px;
-    font-size: 18px;
-}
-
-/* ==== CORES DIFERENTES POR BLOCO ==== */
-.bloco1 { background: #eaf8ea; }
-.bloco2 { background: #e6f7fb; }
-.bloco3 { background: #fff4e6; }
-.bloco4 { background: #f0f0f0; }
-
-/* ==== ÍCONES GRANDES ==== */
-.icone {
-    font-size: 60px;
-    margin-bottom: 15px;
-    color: #4db8cc;
-}
-
-/* ==== VÍDEOS ==== */
-.video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     overflow: hidden;
-    border-radius: 15px;
-    max-width: 700px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.video-container iframe {
+header video {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    border: none;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: -1;
+}
+header h1 {
+    font-size: 48px;
+    text-align: center;
+    z-index: 1;
+}
+header p {
+    font-size: 20px;
+    text-align: center;
+    z-index: 1;
+    margin-top: 10px;
 }
 
-/* ==== INFOCARDS ==== */
+/* ==== BOTÃO DARK MODE ==== */
+#darkModeBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4db8cc;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s;
+}
+#darkModeBtn:hover {
+    transform: scale(1.1);
+    background-color: #3a9ab5;
+}
+
+/* ==== SEÇÕES ==== */
+section {
+    padding: 80px 20px;
+    position: relative;
+    text-align: center;
+}
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ==== BLOCO INFOCARDS ==== */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -89,9 +98,10 @@ section p {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(2deg);
 }
 .card h3 {
     margin-top: 10px;
@@ -99,7 +109,46 @@ section p {
     font-size: 20px;
 }
 
-/* ==== RODAPÉ ==== */
+/* ==== SLIDER ANTES E DEPOIS ==== */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.slider-container img {
+    width: 100%;
+    display: block;
+}
+.slider-handle {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #4db8cc;
+    cursor: ew-resize;
+    z-index: 2;
+}
+
+/* ==== VÍDEOS ==== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 40px auto;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
+
+/* ==== FOOTER ==== */
 footer {
     text-align: center;
     background: #4db8cc;
@@ -107,67 +156,133 @@ footer {
     padding: 25px 20px;
     font-size: 14px;
 }
+
+/* ==== MEDIA ==== */
+@media screen and (max-width: 768px){
+    .cards { flex-direction: column; }
+    header h1 { font-size: 32px; }
+    header p { font-size: 16px; }
+}
 </style>
-<!-- Biblioteca de ícones -->
-<script src="https://kit.fontawesome.com/1e308d4f59.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<!-- BOTÃO DARK MODE -->
+<button id="darkModeBtn">🌙 Dark Mode</button>
+
+<!-- HEADER COM VÍDEO -->
 <header>
-    <h1>🌍 Poluição do Meio Ambiente</h1>
-    <p>Entenda os impactos, as causas e como podemos agir para salvar o planeta.</p>
+    <video autoplay muted loop>
+        <source src="https://www.videvo.net/videvo_files/converted/2015_08/preview/140801_Blue_Sky_Panoramic.mp438587.webm" type="video/webm">
+        Seu navegador não suporta vídeo.
+    </video>
+    <div>
+        <h1>🌍 Poluição do Meio Ambiente</h1>
+        <p>Infográfico Interativo e Educativo</p>
+    </div>
 </header>
 
-<section class="bloco1">
-    <div class="icone"><i class="fas fa-industry"></i></div>
-    <h2>O problema da poluição</h2>
-    <p>A poluição do ar, da água e do solo ameaça a saúde humana e a biodiversidade. O excesso de lixo e gases tóxicos está transformando a Terra em um lugar hostil.</p>
+<!-- SEÇÃO PARALLAX -->
+<section class="parallax" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80'); height:400px;">
+</section>
+
+<!-- SEÇÃO INFOCARDS -->
+<section>
+    <h2>Impactos da Poluição</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Ar Poluído</h3>
+            <p>Gases tóxicos afetam saúde e contribuem ao aquecimento global.</p>
+        </div>
+        <div class="card">
+            <h3>Água Contaminada</h3>
+            <p>Rios e oceanos recebem lixo e resíduos químicos constantemente.</p>
+        </div>
+        <div class="card">
+            <h3>Solo Degradado</h3>
+            <p>Uso excessivo de agrotóxicos e lixo industrial prejudica a terra.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDER ANTES E DEPOIS -->
+<section>
+    <h2>Antes e Depois</h2>
+    <div class="slider-container">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Poluído">
+        <img src="https://images.unsplash.com/photo-1524492449090-1a1105f17c06?auto=format&fit=crop&w=800&q=80" alt="Limpo" style="position:absolute; top:0; left:0; width:50%;" id="sliderImage">
+        <div class="slider-handle" id="sliderHandle"></div>
+    </div>
+</section>
+
+<!-- VÍDEO INTERATIVO -->
+<section>
+    <h2>Vídeo Educativo</h2>
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
     </div>
 </section>
 
-<section class="bloco2">
-    <div class="icone"><i class="fas fa-recycle"></i></div>
-    <h2>Soluções sustentáveis</h2>
-    <p>Reciclagem, energias renováveis e redução do consumo são passos essenciais para construir um futuro mais verde.</p>
-    <div class="cards">
-        <div class="card">
-            <i class="fas fa-trash-alt fa-2x"></i>
-            <h3>Menos lixo</h3>
-            <p>Separar o lixo e reciclar ajuda a reduzir a poluição do solo e da água.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-solar-panel fa-2x"></i>
-            <h3>Energias limpas</h3>
-            <p>Painéis solares e turbinas eólicas substituem combustíveis fósseis.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-seedling fa-2x"></i>
-            <h3>Preservação</h3>
-            <p>Cuidar das florestas garante o equilíbrio climático e o oxigênio do planeta.</p>
-        </div>
-    </div>
-</section>
-
-<section class="bloco3">
-    <div class="icone"><i class="fas fa-mobile-alt"></i></div>
-    <h2>O impacto da tecnologia</h2>
-    <p>O consumo excessivo de eletrônicos e o vício em telas geram lixo eletrônico e reduzem a nossa conexão com a natureza.</p>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/0iwquDzZRN0" allowfullscreen></iframe>
-    </div>
-</section>
-
-<section class="bloco4">
-    <div class="icone"><i class="fas fa-globe-americas"></i></div>
-    <h2>O futuro depende de nós</h2>
-    <p>Cada ação importa: economizar água, plantar árvores, consumir de forma consciente. O planeta pode se recuperar — se agirmos agora.</p>
+<!-- GRÁFICO INTERATIVO -->
+<section>
+    <h2>Estatísticas de Poluição</h2>
+    <canvas id="pollutionChart" width="400" height="200"></canvas>
 </section>
 
 <footer>
-    🌱 Site educativo desenvolvido para conscientização ambiental. Pequenas atitudes transformam o mundo!
+    🌱 Conscientização ambiental: pequenas atitudes, grandes mudanças!
 </footer>
 
+<script>
+// DARK MODE
+const darkModeBtn = document.getElementById('darkModeBtn');
+darkModeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+// SLIDER ANTES E DEPOIS
+const sliderImage = document.getElementById('sliderImage');
+const sliderHandle = document.getElementById('sliderHandle');
+const sliderContainer = sliderHandle.parentElement;
+
+let isDragging = false;
+
+sliderHandle.addEventListener('mousedown', () => isDragging = true);
+window.addEventListener('mouseup', () => isDragging = false);
+window.addEventListener('mousemove', (e) => {
+    if(!isDragging) return;
+    const rect = sliderContainer.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    if(x < 0) x=0;
+    if(x > rect.width) x = rect.width;
+    sliderImage.style.width = x + 'px';
+    sliderHandle.style.left = x + 'px';
+});
+
+// CHART.JS - GRÁFICO INTERATIVO
+const ctx = document.getElementById('pollutionChart').getContext('2d');
+const pollutionChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Plástico', 'CO2', 'Desmatamento', 'Lixo Eletrônico'],
+        datasets: [{
+            label: 'Toneladas por ano',
+            data: [300, 150, 200, 80],
+            backgroundColor: ['#4db8cc','#7fd17f','#f7b267','#f25f5c'],
+            hoverOffset: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
 </body>
 </html>
