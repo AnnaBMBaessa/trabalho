@@ -215,19 +215,22 @@ function mostrarConteudo() {
     const img = document.getElementById('background');
     const logo = document.getElementById('logo-container');
 
-   
+    // Aplica o fade-out na imagem
     img.classList.add('fade-out');
 
-   
     setTimeout(() => {
         container.style.display = 'none';
         conteudo.style.display = 'block';
         logo.style.display = 'flex'; 
+        
+        // 🌟 adiciona brilho azul no fundo do conteúdo quando aparecer
+        conteudo.style.boxShadow = "0 0 40px rgba(0, 150, 255, 0.6)";
+
         conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 1000);
 }
-
 </script>
+
 
 </body>
 </html>
