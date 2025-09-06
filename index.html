@@ -7,102 +7,90 @@
 /* ==== ESTILO GERAL ==== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f2f6f3;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7f2;
     color: #333;
-    overflow-x: hidden;
     line-height: 1.6;
 }
 
-/* ==== CABEÇALHO COM IMAGEM ==== */
-#image-container {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('ATerraQueCriamos.jpg') center/cover no-repeat;
-}
-
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.45);
-    top: 0;
-    left: 0;
-}
-
-button {
-    position: relative;
-    padding: 15px 35px;
-    font-size: 20px;
-    background: #3cb371;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+/* ==== HEADER ==== */
+header {
+    background: linear-gradient(90deg, #6ecf68, #4bb3c9);
     color: #fff;
-    font-weight: bold;
-    letter-spacing: 1px;
-    z-index: 2;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background: #2e8b57;
-}
-
-/* ==== CONTEÚDO ==== */
-#conteudo {
-    display: none;
-    padding: 50px 20px;
-    max-width: 1000px;
-    margin: 40px auto;
-}
-
-#conteudo h1 {
-    font-family: 'Georgia', serif;
-    font-size: 38px;
-    color: #2e8b57;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-#conteudo h2 {
-    font-size: 26px;
-    color: #3a6ea5;
-    margin-top: 40px;
+header h1 {
+    margin: 0;
+    font-size: 38px;
 }
-
-#conteudo p {
+header p {
+    margin: 10px 0 0;
     font-size: 18px;
-    margin-bottom: 25px;
-    text-align: justify;
 }
 
-/* ==== CARDS PARA SEÇÕES ==== */
-.card {
+/* ==== BOTÃO INICIAL ==== */
+#intro {
+    text-align: center;
+    padding: 50px 20px;
+}
+#intro img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+#intro button {
+    margin-top: 25px;
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    background: #6ecf68;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+#intro button:hover {
+    background: #57b756;
+    transform: scale(1.05);
+}
+
+/* ==== SEÇÕES ==== */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
     background: #fff;
     border-radius: 12px;
-    padding: 25px;
-    margin: 30px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.card:hover {
-    transform: translateY(-5px);
+section h2 {
+    margin-top: 0;
+    color: #4bb3c9;
+    font-size: 26px;
+}
+section p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+section img {
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 /* ==== VÍDEOS RESPONSIVOS ==== */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     border-radius: 12px;
     margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 .video-container iframe {
     position: absolute;
@@ -112,18 +100,9 @@ button:hover {
     height: 100%;
 }
 
-/* ==== IMAGENS ==== */
-#conteudo img {
-    max-width: 100%;
-    margin: 25px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-}
-
-/* ==== LOGO ==== */
+/* ==== LOGO/ASSINATURA ==== */
 #logo-container {
-    display: none;
-    flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
@@ -131,58 +110,69 @@ button:hover {
 }
 #logo-container p {
     font-size: 18px;
-    color: #2e8b57;
-    font-weight: bold;
+    color: #333;
 }
 #logo {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 /* ==== FOOTER ==== */
 footer {
     text-align: center;
     padding: 25px 20px;
-    font-size: 15px;
-    background: #e9f2ec;
-    color: #444;
-    border-top: 1px solid #ccc;
+    font-size: 14px;
+    color: #555;
+    background: #eaf5ea;
+    border-top: 2px solid #cde6cd;
 }
 </style>
 </head>
 <body>
 
-<!-- === INTRO === -->
-<div id="image-container">
-    <div class="overlay"></div>
-    <button onclick="mostrarConteudo()">🌍 Entrar no site</button>
+<header>
+    <h1>WALL-E: A Terra Que Criamos</h1>
+    <p>Um alerta sobre o futuro do planeta e nosso papel nas mudanças.</p>
+</header>
+
+<div id="intro">
+    <img src="ATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+    <br>
+    <button onclick="document.getElementById('conteudo').scrollIntoView({behavior:'smooth'})">🌍 Assista o trailer</button>
 </div>
 
-<!-- === CONTEÚDO PRINCIPAL === -->
 <div id="conteudo">
-    <h1>WALL-E: A Terra Que Criamos</h1>
 
-    <div class="card">
+    <section>
         <h2>Você já se perguntou: "Até onde a Terra vai chegar?"</h2>
         <p>Não é filme, não é fantasia — é a vida real. (...) Quer entender melhor? Veja o vídeo:</p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <h2>Poluição e Consumo</h2>
-        <p>Indústrias poluindo sem dó, lixo eletrônico descartado (...) resultado? Um meio ambiente em crise.</p>
+    <section>
+        <h2>O que o filme WALL-E tem a ver com a realidade?</h2>
+        <p>No filme, a Terra virou um lixão gigante devido ao consumo humano (...) A ficção pode ser nosso futuro.</p>
         <img src="https://img.freepik.com/vetores-premium/industria-fabril-poluindo-a-cena-da-agua_18591-64080.jpg" alt="Fábrica poluindo">
-    </div>
+    </section>
 
-    <div class="card">
-        <h2>O que isso tem a ver com WALL-E?</h2>
-        <p>O filme "WALL-E" conta a história de um robô que tenta limpar a Terra tomada pelo lixo. (...) É uma ficção com muito de realidade.</p>
-    </div>
+    <section>
+        <h2>O perigo do vício em telas</h2>
+        <p>O vício em telas afeta nossa mente e o meio ambiente (...) Estamos criando um mundo virtual e destruindo o real.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/0iwquDzZRN0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section>
+        <h2>O planeta precisa de ação</h2>
+        <p>Reciclar, economizar água, reduzir consumo e cobrar mudanças. Cada escolha conta. O futuro será verde ou não será.</p>
+        <img src="https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg" alt="Planeta Terra">
+    </section>
 
     <div id="logo-container">
         <p><b>Anna B. M. Baessa</b></p>
@@ -191,21 +181,8 @@ footer {
 </div>
 
 <footer>
-    🌱 Desenvolvido como alerta para o futuro da Terra. Cada ação conta.
+    🌱 Desenvolvido como alerta para o futuro da Terra. Pequenas ações, grandes mudanças.
 </footer>
-
-<script>
-function mostrarConteudo() {
-    const conteudo = document.getElementById('conteudo');
-    const container = document.getElementById('image-container');
-    const logo = document.getElementById('logo-container');
-
-    container.style.display = 'none';
-    conteudo.style.display = 'block';
-    logo.style.display = 'flex'; 
-    conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-</script>
 
 </body>
 </html>
